@@ -1,6 +1,4 @@
-from bottle import *
-
-
+from bottle import route, run, request, static_file, error, template, response
 
 @route("/")
 def home():
