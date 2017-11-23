@@ -2,7 +2,7 @@
 <html>
 <head>
         <title>Lokaverkefni</title>
-        <link rel="stylesheet" type="text/css" href="static/styles.css">
+        <link rel="stylesheet" type="text/css" href="./static/styles.css">
         <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
 </head>
 <body>  
