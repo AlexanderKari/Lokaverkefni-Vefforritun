@@ -1,6 +1,6 @@
 import json
 from sys import argv
-from bottle import route,run,template, static_file,request,redirect
+from bottle import route,run,template, static_file,request,redirect,response
 
 @route('/myndir/<nafn>')
 def static(nafn):
@@ -12,15 +12,12 @@ def static(nafn):
 def home():
     if request.get_cookie("visited"):
         hallo = request.get_cookie("visited")
-        ioStream = open('myndir.json', 'r', encoding='utf-8')
-        dData = json.load(ioStream)
-        ioStream.close()
-        return template("index2.tpl",a = "Cookie",gogn=dData)
+        return template("index3.tpl",a = "Cookie")
     else:
         return template("index.tpl")
 
 
-@route("/skra", method = 'POST')
+@route("/login", method = 'POST')
 def index():
 
     username = request.forms.get('notendanafn')
@@ -38,12 +35,31 @@ def index():
                     pas = password
                     login = True
         if login == True:
-            ioStream = open('myndir.json', 'r', encoding='utf-8')
-            dData = json.load(ioStream)
-            ioStream.close()
-            return template("index2.tpl", gogn=dData,n = nafn,p = pas)
+            response.set_cookie("visited", "welcome back to ")
+            return template("index3.tpl",a = "Login",n = nafn,p = pas)
         else:
             redirect('http://localhost:8080/')
+@route("/del")
+def delcookie():
+    response.set_cookie("visited", "", expires=0)
+    return '''<h1>Cookie deleted</h1>
+    <a href="/">Go to Log in</a>'''
+@route("/skra")
+def skra():
+
+    username = request.forms.get('notendanafn')
+    password = request.forms.get('lykilord')
+
+    with open("users.txt", "a") as f:
+        user = ","+username+":"+password
+        f.write(user)
+    return '''
+        <h1>Notanda hefur verið bætt við</h1>
+    '''
 run(host='localhost', port=8080, debug=True, Realoader=True)
 
 
+'''
+ioStream = open('myndir.json', 'r', encoding='utf-8')
+dData = json.load(ioStream)
+ioStream.close()'''

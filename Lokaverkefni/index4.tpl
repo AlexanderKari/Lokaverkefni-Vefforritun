@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Lokaverkefni</title>
-        <link rel="stylesheet" type="text/css" href="static/styles.css">
-        <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+	<title>Bæta Notanda</title>
+	<link rel="stylesheet" type="text/css" href="./static/styles.css">
 </head>
-<body>  
-        <br>
+<body>
+		<br>
         <br>
         <br>
         <br>
@@ -14,9 +13,9 @@
         <br>
         <br>
         <br> 
-        <form action = "/login" method = "post">
-        <h2>Upplýsingar</h2>
-        <div>
+	<form action="/skra" method="POST">
+		<h2>Bæta við notanda</h2>
+		<div>
                 <label>
                 Notendanafn
                 <input type="text" name="notendanafn" placeholder="Notendanafn" required="">
@@ -30,7 +29,7 @@
                 </label>
         </div>
                 <br>
-                <input type = "submit" name = "login" value = "Login" />
-
+                <input type = "submit" name = "login" value = "Skrá" />
+	</form>
 </body>
 </html>
