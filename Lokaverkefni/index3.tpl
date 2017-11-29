@@ -9,9 +9,9 @@
       <div>
 
         <nav> 
-          <a href="#grein1 ">Myndasíða</a>
-          <a href="#grein2 ">Bæta við notanda</a> 
-          <a href="#grein3 ">Breyta Lykilorði</a> 
+          <a href="/bilar ">Myndasíða</a>
+          <a href="/not ">Bæta við notanda</a> 
+          <a href="# ">Breyta Lykilorði</a> 
         </nav>
 
 <h1>Verkefnalýsing</h1>

@@ -44,7 +44,11 @@ def delcookie():
     response.set_cookie("visited", "", expires=0)
     return '''<h1>Cookie deleted</h1>
     <a href="/">Go to Log in</a>'''
-@route("/skra")
+@route("/lykil")
+def lykil():
+
+    return template('index5.tpl')
+@route("/skra", method = "POST")
 def skra():
 
     username = request.forms.get('notendanafn')
@@ -56,10 +60,16 @@ def skra():
     return '''
         <h1>Notanda hefur verið bætt við</h1>
     '''
+@route("/not")
+def notandi():
+    return template('index4.tpl')
+
+
+
+@route("/bilar")
+def bilar():
+    ioStream = open('myndir.json', 'r', encoding='utf-8')
+    dData = json.load(ioStream)
+    ioStream.close()
+    return template('index2.tpl',gogn = dData)
 run(host='localhost', port=8080, debug=True, Realoader=True)
-
-
-'''
-ioStream = open('myndir.json', 'r', encoding='utf-8')
-dData = json.load(ioStream)
-ioStream.close()'''
