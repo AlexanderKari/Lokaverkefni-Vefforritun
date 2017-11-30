@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bæta Notanda</title>
+	<title>Breyta lykilorði</title>
 	<link rel="stylesheet" type="text/css" href="./static/styles.css">
 </head>
 <body>
-		<br>
+	<br>
         <br>
         <br>
         <br>
@@ -13,15 +13,8 @@
         <br>
         <br>
         <br> 
-	<form action="/skra" method="POST">
-		<h2>Breyta lykilorð við notanda</h2>
-		<div>
-                <label>
-                Notendanafn
-                <input type="text" name="notendanafn" placeholder="Notendanafn" required="">
-                </label>
-        </div>
-        <br>
+	<form action="/breyt" method="POST">
+		<h2>Breyta lykilorði</h2>
         <div>
                 <label>
                 Lykilorð

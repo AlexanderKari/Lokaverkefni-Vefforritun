@@ -1,1 +1,1 @@
-﻿admin:admin
+jonas:alexhora,alex:erhora,admin:blynn

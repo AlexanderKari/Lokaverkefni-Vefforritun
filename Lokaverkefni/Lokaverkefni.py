@@ -12,7 +12,13 @@ def static(nafn):
 def home():
     if request.get_cookie("visited"):
         hallo = request.get_cookie("visited")
-        return template("index3.tpl",a = "Cookie")
+        print(hallo)
+        nota = hallo.split(";")
+        global nafn
+        global pas
+        nafn = nota[0]
+        pas = nota[1]
+        return template("index3.tpl",a = "Cookie",n = nafn,p = pas)
     else:
         return template("index.tpl")
 
@@ -25,17 +31,21 @@ def index():
 
     with open("users.txt","r") as f:
         users = f.read()
+        users = users.strip()
         users = users.split(",")
         login = False
         for a in users:
             user = a.split(":")
             if username == user[0]:
                 if password == user[1]:
+                    global nafn
+                    global pas
                     nafn = username
                     pas = password
                     login = True
         if login == True:
-            response.set_cookie("visited", "welcome back to ")
+            nota = nafn+";"+pas
+            response.set_cookie("visited",nota)
             return template("index3.tpl",a = "Login",n = nafn,p = pas)
         else:
             redirect('http://localhost:8080/')
@@ -59,11 +69,47 @@ def skra():
         f.write(user)
     return '''
         <h1>Notanda hefur verið bætt við</h1>
+           <a href="/">Til baka</a>
     '''
 @route("/not")
 def notandi():
     return template('index4.tpl')
 
+@route("/breyta")
+def breyta():
+    return  template('index5.tpl')
+@route('/breyt',method = "POST")
+def breyt():
+    lykilord = request.forms.get('lykilord')
+    with open("users.txt","r") as f:
+        users = f.read()
+        users = users.strip()
+        users = users.split(",")
+        forU = users
+        print(users)
+        for a in forU:
+            user = a.split(":")
+            if user[0] == nafn:
+                if user[1] == pas:
+                    users.remove(nafn+":"+pas)
+                    users.append(nafn+":"+lykilord)
+                    response.set_cookie("visited",nafn+";"+lykilord)
+
+    txt = ""
+    tel = 0
+    for a in users:
+        tel+=1
+        if tel == len(users):
+            txt=txt+a
+        else:
+            txt = txt+a+","
+    print(users)
+    with open("users.txt","w") as f:
+        f.write(txt)
+    return '''
+        <h1>Notanda hefur verið breytt</h1>
+           <a href="/">Til baka</a>
+    '''
 
 
 @route("/bilar")
@@ -73,3 +119,4 @@ def bilar():
     ioStream.close()
     return template('index2.tpl',gogn = dData)
 run(host='localhost', port=8080, debug=True, Realoader=True)
+"run(host='0.0.0.0', port=argv[1])"
