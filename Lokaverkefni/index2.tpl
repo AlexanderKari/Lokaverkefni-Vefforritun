@@ -5,3 +5,4 @@
 	<h4>Mynd heiti: {{ gogn['myndir'][i]['mynd'] }}</h4>
 	<img src="./myndir/{{gogn['myndir'][i]['mynd']}}"><br>
 % end
+<a href="/">Til baka</a>

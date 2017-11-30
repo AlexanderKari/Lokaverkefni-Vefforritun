@@ -3,6 +3,7 @@
 <head>
 	<title>Leynisíða</title>
 	<link rel="stylesheet" type="text/css" href="./static/styles2.css">
+	<link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
 </head>
 <body>
 <section>
@@ -11,7 +12,8 @@
         <nav> 
           <a href="/bilar ">Myndasíða</a>
           <a href="/not ">Bæta við notanda</a> 
-          <a href="/breyta ">Breyta Lykilorði</a> 
+          <a href="/breyta ">Breyta Lykilorði</a>
+          <a href="/eyda">Eyða notanda</a> 
         </nav>
 <p>Nafn: {{ n }}</p>
 <p>Lykilorð: {{ p }}</p>
