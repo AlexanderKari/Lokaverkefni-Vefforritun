@@ -96,7 +96,7 @@ def index():
             response.set_cookie("visited",nota)
             return template("index3.tpl",a = "Login",n = nafn,p = pas)
         else:
-            redirect('http://localhost:8080/')
+            redirect('https://lokaverkefni-alexanderogjonas.herokuapp.com/')
 @route("/del")
 def delcookie():
     response.set_cookie("visited", "", expires=0)
