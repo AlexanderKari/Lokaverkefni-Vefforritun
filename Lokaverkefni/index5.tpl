@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Breyta lykilorði</title>
-	<link rel="stylesheet" type="text/css" href="./static/styles.css">
+	<link rel="stylesheet" type="text/css" href="./static/style4.css">
         <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
 </head>
 <body>
@@ -25,6 +25,6 @@
                 <br>
                 <input type = "submit" name = "login" value = "Skrá" />
 	</form>
-        <a href="/">Til baka</a>
+        <a href="/" title="Til baka" id="arrow">&#x21E7;</a>
 </body>
 </html>

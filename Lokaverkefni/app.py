@@ -30,7 +30,7 @@ def home():
 @route("/eyda")
 def eyda():
     return '''
-        <link rel="stylesheet" type="text/css" href="./static/styles.css">
+        <link rel="stylesheet" type="text/css" href="./static/style4.css">
         <br>
         <br>
         <br>
@@ -43,7 +43,8 @@ def eyda():
         <form action="/dele" method="POST">
         <input type = "submit" name = "login" value = "Eyða" />
         </form>
-        <a href="/">Til baka</a>
+        <a href="/" title="Til baka" id="arrow">&#x21E7;</a>
+</body>
     '''
 @route("/dele", method = "POST")
 def dele():
@@ -158,11 +159,11 @@ def breyt():
     '''
 
 
-@route("/bilar")
+@route("/bilar",method = "GET")
 def bilar():
     ioStream = open('myndir.json', 'r', encoding='utf-8')
     dData = json.load(ioStream)
     ioStream.close()
     return template('index2.tpl',gogn = dData)
-run(host='localhost', port=8080, debug=True, Realoader=True)
-"run(host='0.0.0.0', port=argv[1])"
+"run(host='localhost', port=8080, debug=True, Realoader=True)"
+run(host='0.0.0.0', port=argv[1])

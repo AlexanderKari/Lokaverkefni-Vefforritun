@@ -2,18 +2,11 @@
 <html>
 <head>
 	<title>Bæta Notanda</title>
-	<link rel="stylesheet" type="text/css" href="./static/styles.css">
+	<link rel="stylesheet" type="text/css" href="./static/style4.css">
         <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
 </head>
 <body>
-		<br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br> 
+
 	<form action="/skra" method="POST">
 		<h2>Bæta við notanda</h2>
 		<div>
@@ -32,6 +25,6 @@
                 <br>
                 <input type = "submit" name = "login" value = "Skrá" />
 	</form>
-        <a href="/">Til baka</a>
+        <a href="/" title="Til baka" id="arrow">&#x21E7;</a>
 </body>
 </html>

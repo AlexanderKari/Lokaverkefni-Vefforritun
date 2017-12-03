@@ -31,6 +31,10 @@
 <br>
 <li>Dagur 4: Í dag náðum við að láta breyta lykilorði virka og að notendanafn og lykilorð eru vistuð með cookie</li>
 
+<br>
+<li>Dagur 5: Í dag löguðum við Margin og bættum css á allar síður, Létum síðuna á heroko og tókum myndband fyrir skil</li>
+
+
 </ul>
 
 
