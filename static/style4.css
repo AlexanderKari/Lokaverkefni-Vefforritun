@@ -1,0 +1,33 @@
+html{
+	font-family: 'Barlow', sans-serif; 
+}
+body{
+	width: 300px;
+	margin: auto;
+	margin-top: 300px;
+	margin-bottom:  870px;
+
+	text-align: center;
+	background:#2D3030;
+	background: linear-gradient(#2D3030, #899194);
+}
+#arrow
+{
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	background-color: black;
+	color: lightblue;
+	font-size: 2.5em;
+	padding: 0 12px;
+	border-radius: 30px;
+
+}
+#arrow:hover
+{
+	background-color: #00CE00;
+	color: white;
+}
+a{
+	text-decoration: none;
+}
